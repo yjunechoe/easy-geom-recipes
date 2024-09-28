@@ -4,6 +4,9 @@ webr:
   packages:
     - tidyverse
     - palmerpenguins
+    - ggtrace
+  repos:
+    - https://yjunechoe.r-universe.dev/builds
 ---
 
 Creating a new geom_\*() or stat_\*() function is often motivated when plotting would require pre-computation otherwise. By using Stat extension, you can define computation to be performed *within* the plotting pipeline, as in the code that follows: 
@@ -524,6 +527,9 @@ penguins_clean |>
   aes(x = bill_depth_mm, y = bill_length_mm) + 
   geom_point() +
   ____(size = 8, color = "red")
+
+# ggtrace
+ggtrace::inspect_return(method = StatMeans$compute_group, cond = 1L, error = TRUE)
 ```
 
 
